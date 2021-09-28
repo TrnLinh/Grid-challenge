@@ -1,0 +1,173 @@
+@import url(https://fonts.google.com/specimen/Barlow+Semi+Condensed);
+
+:root {
+  /*Primary*/
+  --violet: hsl(263, 55%, 52%);
+  --grayish-blue: hsl(217, 19%, 35%);
+  --blackish-blue: hsl(219, 29%, 14%);
+  --white: white;
+
+  /*Neutral*/
+  --gray: hsl(0, 0%, 81%);
+  --lightgray-blue: hsl(210, 46%, 95%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  overflow-x: hidden;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--lightgray-blue);
+}
+.wrap {
+  margin: 0 auto;
+  width: 90%;
+}
+.box1 {
+  grid-area: box1;
+}
+.box2 {
+  grid-area: box2;
+}
+.box3 {
+  grid-area: box3;
+}
+.box4 {
+  grid-area: box4;
+}
+.box5 {
+  grid-area: box5;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto 20%;
+  grid-template-rows: auto auto;
+  grid-column-gap: 3%;
+  grid-row-gap: 6%;
+  grid-template-areas:
+    "box1 box1 box2 box5"
+    "box3 box4 box4 box5";
+  align-content: center;
+}
+
+.box-wrap {
+  margin: 0 auto;
+  width: 90%;
+}
+.box-header {
+  display: flex;
+  align-items: center;
+  margin: 2vh 0 1vh 0;
+}
+.box1 {
+  background-color: var(--violet);
+  grid-column: 1/3;
+  border-radius: 20px;
+  color: var(--white);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 100px;
+}
+.avatar {
+  border: 3px solid rgba(255, 255, 255, 0.336);
+  border-radius: 50%;
+  height: 40px;
+}
+.name-graduate {
+  margin-left: 20px;
+}
+.name {
+  font-size: 16px;
+  font-weight: 600;
+}
+.graduate {
+  opacity: 0.5;
+  margin-top: 2px;
+  font-size: 13px;
+}
+.main {
+  font-size: 25px;
+  font-weight: 600;
+}
+.sub {
+  font-size: 18px;
+  opacity: 0.7;
+  margin: 3vh 0 5vh 0;
+  line-height: 1.5;
+}
+.small-wrap {
+  width: 80%;
+}
+.box2,
+.box4,
+.box5 {
+  background-color: var(--grayish-blue);
+  color: var(--white);
+  border-radius: 20px;
+}
+.box3 {
+  background-color: var(--white);
+  border-radius: 20px;
+}
+.box4 {
+  background-color: var(--blackish-blue);
+}
+.box5 {
+  background-color: white;
+  color: black;
+}
+.box3,
+.box4,
+.box5 {
+  height: 100%;
+}
+@media (max-width: 400px) {
+  .grid-container {
+    margin: 10vh 0;
+
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "box1"
+      "box2"
+      "box3"
+      "box4"
+      "box5";
+    gap: 0%;
+    grid-row-gap: 20px;
+  }
+  .main {
+    font-size: 18px;
+  }
+  .sub {
+    font-size: 16px;
+  }
+  .box1,
+  .box2,
+  .box3,
+  .box4,
+  .box5 {
+    height: max-content;
+    text-align: justify;
+  }
+
+  .box3 br {
+    display: none;
+  }
+
+  .attribution {
+    left: 10%;
+  }
+}
